@@ -8,7 +8,7 @@ img{
 	padding-top: 9px;
 }
 .navbar-default{
-	background-color: #0080ff;
+	background-color: #6fb7ff;
 }
 .panel-title{
 	font-family: 'Poppins', sans-serif;
@@ -20,4 +20,11 @@ img{
 }
 .control-label{
 	font-family: 'Poppins', sans-serif;
+}
+.alert{
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: #84c565;
+	font-family: 'Poppins', sans-serif;
+	color: black;
 }
