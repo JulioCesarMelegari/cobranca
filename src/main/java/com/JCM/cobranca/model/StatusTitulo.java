@@ -3,9 +3,8 @@ package com.JCM.cobranca.model;
 public enum StatusTitulo {
 	
 	PENDENTE("Pendente"),
-	RECEBIDO("Recebido"),
-	CANCELADO("Cancelado");
-	
+	RECEBIDO("Recebido");
+		
 	private String descricao;
 	
 	private StatusTitulo(String descricao) {
