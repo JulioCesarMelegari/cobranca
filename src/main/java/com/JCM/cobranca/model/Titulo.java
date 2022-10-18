@@ -10,8 +10,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
@@ -39,8 +37,8 @@ public class Titulo {
 	
 	@NotNull(message = "Data de vencimento é obrigatória")
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	@Temporal(TemporalType.DATE)
-	private Date dataVencimento;
+	private Date
+	dataVencimento;
 	
 	@NotNull(message = "Valor não pode ser nulo")
 	@DecimalMin(value="0.01", message = "Valor nao pode ser menor que 0,01")
