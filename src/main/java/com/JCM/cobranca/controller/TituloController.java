@@ -17,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.JCM.cobranca.model.StatusTitulo;
 import com.JCM.cobranca.model.Titulo;
+import com.JCM.cobranca.model.TituloFilter;
 import com.JCM.cobranca.repository.TitulosRepository;
 import com.JCM.cobranca.service.TituloService;
 
@@ -53,14 +54,13 @@ public class TituloController {
 			}catch(IllegalArgumentException e){
 				errors.rejectValue("dataVencimento", null, e.getMessage());
 					return "redirect:/titulos";
-			}
-		
+			}	
 		
 	}
 	
 	@RequestMapping
-	public ModelAndView pesquisar() {
-		List<Titulo> ListTitulos = titulosRepository.findAll();
+	public ModelAndView pesquisar(@ModelAttribute("filtro") TituloFilter filtro) {
+		List<Titulo> ListTitulos = tituloService.filtrar(filtro);
 		
 		ModelAndView mv = new ModelAndView("PesquisaTitulos");
 		mv.addObject("titulos", ListTitulos);

@@ -1,12 +1,15 @@
 package com.JCM.cobranca.service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.JCM.cobranca.model.StatusTitulo;
 import com.JCM.cobranca.model.Titulo;
+import com.JCM.cobranca.model.TituloFilter;
 import com.JCM.cobranca.repository.TitulosRepository;
 
 @Service
@@ -36,6 +39,11 @@ public class TituloService {
 		
 		return StatusTitulo.RECEBIDO.getDescricao();
 		
+	}
+
+	public List<Titulo> filtrar(TituloFilter filtro) {
+		String descricao = filtro.getDescricao() == null ? "%" : filtro.getDescricao();
+		return titulosRepository.findByDescricaoContaining(descricao);
 	}
 	
 	
